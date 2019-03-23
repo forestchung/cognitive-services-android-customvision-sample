@@ -1,7 +1,7 @@
-Apple
-Banana
-Coconut
-Orange
-Passionfruit
-Pineapple
-Strawberry
+00
+1
+2
+Beetroot
+Broccoli
+Cauliflower
+Onion

@@ -23,9 +23,9 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
 
-import demo.tensorflow.org.customvision_sample.Classifier.Recognition;
-
 import java.util.List;
+
+import demo.tensorflow.org.customvision_sample.Classifier.Recognition;
 
 public class RecognitionScoreView extends View implements ResultsView {
     private static final float TEXT_SIZE_DIP = 24;
@@ -57,8 +57,13 @@ public class RecognitionScoreView extends View implements ResultsView {
         if (results != null && results.size() > 0) {
             int y = (int) (fgPaint.getTextSize() * 1.4f);
             final Recognition recog = results.get(0);
-            final int x = (int)(canvas.getWidth() - fgPaint.measureText(recog.getTitle())) / 2;
-            canvas.drawText(recog.getTitle(), x, y, fgPaint);
+
+            // final int x = (int)(canvas.getWidth() - fgPaint.measureText(recog.getTitle())) / 2;
+            int space = 2 - Integer.parseInt(recog.getTitle());
+            String sspace = String.valueOf(space) + " parking space";
+            final int x = (int)(canvas.getWidth() - fgPaint.measureText(sspace)) / 2;
+
+            canvas.drawText(sspace, x, y, fgPaint);
         }
     }
 }
